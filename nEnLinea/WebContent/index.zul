@@ -1,0 +1,88 @@
+<?page title="N en linea"?>
+<window sclass="container" title="N en linea" border="normal"  apply='nEnLinea.ctrl.IndexCtrl'>
+
+<style>
+		<!-- Styles to main container -->
+		.container{ height: 100%; margin-top: 0%; margin-bottom: 0%; }
+		<!-- Styles to form-login -->
+		.form-init{ display: flex; }
+
+		<!--Styles to card-content-->
+		.card-content{ border-radius: 20px; font-size: 15%; }
+
+	
+		<!-- Styles to inputs login -->
+		.inputs-init { display: block; width: 100%; margin: 5px;
+		border: 0; border-radius: 4px; border-box; padding: 12px 20px;
+		font-weight: 200px; line-height:inherit;
+
+
+
+	</style>
+    <div sclass="form-init">
+		<grid>
+			<columns>
+				<column />
+			</columns>
+			<rows>
+				<row sclass="card-content">
+					
+					<div sclass="col" style= "text-align:center">
+						<html>
+							<![CDATA[ <h1>N En Linea</h1> 
+							 ]]>
+						</html>
+						
+						<textbox sclass="inputs-init" id="name1Input"
+							width="80%" placeholder="Nombre jugador 1" constraint="no empty"
+							 />
+						<separator bar="false" style="margin-top: 10px;" />
+					 	<textbox sclass="inputs-init" id="name2Input"
+							width="80%" placeholder="Nombre jugador 2" constraint="no empty"
+							 />
+					 	<separator bar="false" style="margin-top: 10px;" />
+					 	
+						<intbox sclass="inputs-init" id="tamanoM" width="50%" 
+							placeholder="Tamaño de tablero"/>
+						<separator bar="false" style="margin-top: 10px;" />
+						
+						<button style="margin-top: 10px; text-align:left;" id="botonInit">
+							Iniciar
+						</button>
+						
+						
+					</div>
+				</row>
+			</rows>
+		</grid>
+	</div>
+	<div sclass="history" style= "text-align:center">
+		<html>
+			<![CDATA[ <h1>Historial</h1> 
+			 ]]>
+		</html>
+	<listbox id="lbxPartidas">
+		<listhead>
+			<listheader label="No partida"/>
+			<listheader label="Fecha"/>
+			<listheader label="Nombre jugador 1"/>
+			<listheader label="Nombre jugador 2"/>
+			<listheader label="Estado del juego"/>
+			<listheader label="ganador"/>
+		</listhead>
+		<template name="model">
+		 <listitem>
+		 	<listcell label="${each.no}"/>
+		 	<listcell label="${each.fecha}"/>
+		 	<listcell label="${each.nombre1}"/>
+		 	<listcell label="${each.nombre2}"/>
+		 	<listcell label="${each.estado}"/>
+		 	<listcell label="${each.ganador}"/>
+		 </listitem>
+		</template>
+		
+
+	</listbox>
+	
+	</div>
+</window>
