@@ -3,11 +3,9 @@ package nEnLinea.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.zkoss.zul.Listbox;
 
 import nEnLinea.base.Conexion;
 
@@ -24,8 +22,9 @@ public class PartidaServiceI implements PartidaService{
 		try {
 			PreparedStatement ps = con.prepareStatement("select * from partida");
 			rs = ps.executeQuery();
-			Partida part = new Partida();
+			
 			while (rs.next()) {
+				Partida part = new Partida();
 				part.setNo(Integer.parseInt(rs.getString("NO")));
 				part.setFecha(rs.getDate("FECHA").toString());
 				part.setNombre1(rs.getString("NOMBRE1"));

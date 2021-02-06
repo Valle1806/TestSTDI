@@ -1,12 +1,13 @@
 <?page title="new page title" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="N EN LINEA" sclass="container" style= "text-align:center" border="normal" apply="nEnLinea.ctrl.TableroCtrl">
+<window title="N EN LINEA" sclass="container" style= "text-align:center; overflow-y: scroll;" border="normal" apply="nEnLinea.ctrl.TableroCtrl">
 	<style>
 		<!-- Styles to main container -->
-		.container{ height: 60%; width: 40%; margin-top: 0%; margin-bottom: 0%; }
+		.container{ height: 100%; width: 100%; margin-top: 0%; margin-bottom: 0%; }
 		.grid{height: 100%; width: 100% }
 		<!--Styles to card-content-->
 		.card-content{ border-radius: 20px; font-size: 15%; }
+	
 		
 	</style>
 	<label id="lblTurn">Turno jugador</label>
@@ -17,17 +18,27 @@
 			</columns>
 	<rows>
 		<row  sclass="card-content">
+		
 			<grid sclass="grid" id="gridTablero">
-			   
+			
+			 
+			
 			 </grid>
+		 
 			<image
 								src="https://t3.ftcdn.net/jpg/03/12/44/34/360_F_312443477_5lxDV8QHzXyOwMH4FxLmU4Y93h12NZEJ.jpg"
 							style="width: 60%;" />
 		</row>
+		
 	</rows>
 	
 	
+	
 	</grid>
+	
+	<separator bar="false" style="margin-top: 10px;" />
+	<label id="lblWinner"> </label>
+	<separator bar="false" style="margin-top: 10px;" />
 	
 	    
 	 

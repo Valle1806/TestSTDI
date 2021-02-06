@@ -2,7 +2,7 @@ package nEnLinea.ctrl;
 
 import org.zkoss.zk.ui.event.Event;
 
-public class Button extends org.zkoss.zul.Button{
+public class Button extends org.zkoss.zul.Div{
 	
 	/**
 	 * 

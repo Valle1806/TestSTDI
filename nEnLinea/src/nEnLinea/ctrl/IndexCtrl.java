@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
+import org.zkoss.zk.ui.Session;
+import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.Wire;
@@ -44,13 +46,17 @@ public class IndexCtrl extends SelectorComposer<Component>{
 	
 	public void LoadData() {
 		List<Partida> part= partidaService.findAll();
+		
 		lbxPartidas.setModel(new ListModelList<Partida>(part));
 		
 	}
 	
 	@Listen("onClick=#botonInit")
 	public void Init() {
-		System.out.println(name1Input.getValue());
+		Session session = Sessions.getCurrent();
+		session.setAttribute("name1", name1Input.getValue());
+		session.setAttribute("name2", name2Input.getValue());
+		session.setAttribute("size", tamanoM.getValue());
 	
 		Executions.sendRedirect("/tablero.zul");
 		
